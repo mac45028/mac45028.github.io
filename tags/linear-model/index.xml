@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Linear Model on Mac&#39;s blog</title>
+    <link>/tags/linear-model/</link>
+    <description>Recent content in Linear Model on Mac&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 29 Oct 2017 20:12:33 -0500</lastBuildDate>
+    
+	<atom:link href="/tags/linear-model/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>(Very brief) intro to linear regression</title>
+      <link>/post/linear_regression/</link>
+      <pubDate>Sun, 29 Oct 2017 20:12:33 -0500</pubDate>
+      
+      <guid>/post/linear_regression/</guid>
+      <description>Introduction: In this first post, we are going to discuss about the linear regression model which is simple and effective for many situations. This model is useful due to the following reasons.
+ Simple to understand.
+ Problem can be solved easily.
+ Work in many situations.
+  Theory: Let suppose, we have the following dataset,
+\[ \begin{align} X_{N} &amp;amp;= \{\hat{X}_1, \hat{X}_2, .., \hat{X}_N\} \\ Y_{N} &amp;amp;= \{y_1, y_2, .</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -3,17 +3,25 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mac&#39;s blog</title>
+<title>(Very brief) intro to linear regression</title>
 <meta name="description" content="Mac&#39;s blog">
 <meta name="generator" content="Hugo 0.30.2" />
-<meta property="og:title" content="Mac&#39;s blog" />
-<meta property="og:description" content="Mac&#39;s blog" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="/" />
+<meta property="og:title" content="(Very brief) intro to linear regression" />
+<meta property="og:description" content="Introduction: In this first post, we are going to discuss about the linear regression model which is simple and effective for many situations. This model is useful due to the following reasons.
+ Simple to understand.
+ Problem can be solved easily.
+ Work in many situations.
+  Theory: Let suppose, we have the following dataset,
+\[ \begin{align} X_{N} &amp;= \{\hat{X}_1, \hat{X}_2, .., \hat{X}_N\} \\ Y_{N} &amp;= \{y_1, y_2, ." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/post/linear_regression/" />
 
 
 
-<meta property="og:updated_time" content="2017-10-29T23:59:51-05:00"/>
+<meta property="article:published_time" content="2017-10-29T20:12:33-05:00"/>
+
+<meta property="article:modified_time" content="2017-10-29T20:12:33-05:00"/>
+
 
 
 
@@ -26,7 +34,7 @@
 
 <link rel="dns-prefetch" href="//fonts.googleapis.com" />
 <link rel="dns-prefetch" href="//fonts.gstatic.com" />
-<link rel="alternate" type="application/rss+xml" title="Mac&#39;s blog Feed" href="/index.xml">
+
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700" type="text/css" media="all" />
 <link rel="stylesheet" href="/css/style.css" type="text/css" media="all" />
 <script type="text/javascript" src="/js/scripts.js"></script>
@@ -54,35 +62,109 @@
 		</header>
 		<div class="wrapper clearfix">
 
-	<main class="main-content list content" role="main"><article class="list__item post clearfix">
-	<div class="list__content clearfix">
-		<header class="list__header">
-			<h3 class="list__title post__title ">
-				<a href="/post/linear_regression/" rel="bookmark">(Very brief) intro to linear regression</a>
-			</h3>
-			<div class="list__meta meta">
+<main class="main-content content" role="main" itemprop="mainContentOfPage">
+	<article class="post">
+		<header class="post__header clearfix">
+			<h1 class="post__title">(Very brief) intro to linear regression</h1>
+			<p class="post__meta meta">
 				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
-				<time class="list__meta-date" datetime="2017-10-29T20:12:33">October 29, 2017</time>
-			</div>
+				<time class="post__meta-date" datetime="2017-10-29T20:12:33">October 29, 2017</time>
+				<span class="post__meta-categories meta-categories">
+					<svg class="icon icon-category" height="16" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path d="m7 2l1 2h8v11h-16v-13z"/></svg>
+					<a class="meta-categories__link" href="/categories/statistics" rel="category">Statistics</a></span>
+			</p>
 		</header>
-		<div class="list__excerpt">
-			Introduction: In this first post, we are going to discuss about the linear regression model which is simple and effective for many situations. This model is useful due to the following reasons.
- Simple to understand.
- Problem can be solved easily.
- Work in many situations.
-  Theory: Let suppose, we have the following dataset,
-\[ \begin{align} X_{N} &amp;= \{\hat{X}_1, \hat{X}_2, .., \hat{X}_N\} \\ Y_{N} &amp;= \{y_1, y_2, .
-		</div>
-		<div class="list__footer">
-			<a class="list__footer-readmore btn" href="/post/linear_regression/">Read more…</a>
-		</div>
-	</div>
-</article>
+		<div class="post__content clearfix">
+			
 
-		
+<h3 id="introduction">Introduction:</h3>
 
+<p>In this first post, we are going to discuss about the linear regression model which is simple and effective for many situations. This model is useful due to the following reasons.</p>
+
+<ul>
+<li><p>Simple to understand.</p></li>
+
+<li><p>Problem can be solved easily.</p></li>
+
+<li><p>Work in many situations.</p></li>
+</ul>
+
+<h3 id="theory">Theory:</h3>
+
+<p>Let suppose, we have the following dataset,</p>
+
+<p><code>\[
+    \begin{align}
+        X_{N} &amp;= \{\hat{X}_1, \hat{X}_2, .., \hat{X}_N\}    \\
+        Y_{N} &amp;= \{y_1, y_2, .., y_N\} 
+    \end{align}
+\]</code></p>
+
+<p>Where,</p>
+
+<p><code>\[
+    \hat{X}_i = (x_1, x_2, ..., x_P)^T  \ \forall i \in \{1,..,N\}  
+\]</code></p>
+
+<p>Note: $\hat{X}$ is a P dimensional vector and $y$ is a continuous value.</p>
+
+<p>The goal here is to create a model that can predict the outcome $f(x)$ based on the given input $x$. The linear regression model can be defined as follow.</p>
+
+<p><code>\[
+    f(X) = \beta_1 X_1 + \beta_2 X_2 + ... \beta_N X_N = X^T\beta + \epsilon \tag{1}
+\]</code></p>
+
+<p>The upcoming question is how do we know that the model is good? We need some kind of information that could be measurable and non-computationally expensive. Here is one of it.</p>
+
+<p><code>\[
+    Loss\ =\ E[(Y - f(X))^2] =\ (Y - X\beta)^T (Y - X\beta) \tag{2}
+\]</code></p>
+
+<p>The optimal solution occurs when the loss function is at lowest. In other words, the predicted result is close to the real value. Therefore, we can find the $\beta$ based on the above loss function as follow,</p>
+
+<p><code>\[
+\begin{align}
+    \frac{\partial Loss}{\partial \beta} &amp;= -2X^T(Y-X\beta) = 0 \\
+        \therefore \hat{\beta} &amp;= (X^TX)^{-1} X^TY \tag{3}
+\end{align}
+\]</code></p>
+
+<h3 id="example-single-dimensional-case">Example: single dimensional case</h3>
+
+<p>Since this is a brief introduction, we will apply idea above on one-dimensional data. With R, we will generate sample data as follow.</p>
+
+<pre><code class="language-r">X &lt;- rnorm(n = 200, mean = 0, sd = 1)
+Y &lt;- 1.23123*X + rnorm(200) # True model
+plot(x = X, y = Y, xlab = 'X', ylab = 'Y')
+</code></pre>
+
+<p><img src="sample_data.png" alt="sample dataset" /></p>
+
+<p>Next, we will evaluate the $\beta$ as explained in the previous section as follow.</p>
+
+<pre><code>	beta &lt;- solve(t(X) %*% X) %*% (t(X) %*% Y)
+</code></pre>
+
+<p>The solution will be different based on the generated dataset. In my case, $\beta = 1.290422$, which is pretty close to the real value, and here is the prediction result.</p>
+
+<p><img src="sample_data_regressed.png" alt="regression result" /></p>
+
+		</div>
 		
-	</main>
+<div class="post__tags tags clearfix">
+	<svg class="icon icon-tag" width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="m4.73135 3.3795002q0-.5597-.39604-.9557-.39604-.3961-.95577-.3961-.55974 0-.95578.3961-.39604.396-.39604.9557 0 .5598.39604.9558.39604.3961.95578.3961.55973 0 .95577-.3961.39604-.396.39604-.9558zm11.26865 6.0832q0 .5596998-.39076.9504998l-5.18548 5.196q-.41188.3908-.9610504.3908-.55974 0-.9505-.3908l-7.5511496-7.5616998q-.40132-.3907-.68119-1.0666-.27987-.6759-.27987-1.2357v-4.3934q0-.54920004.40132-.95050004.40132-.4013.9505-.4013h4.39339q.55974 0 1.23565.2799.67591.2798 1.07723.6812l7.55115 7.54060004q.39076.4118.39076.961z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item"><a class="tags__link" href="/tags/linear-regression/" rel="tag">linear regression</a></li>
+		<li class="tags__item"><a class="tags__link" href="/tags/linear-model/" rel="tag">linear model</a></li>
+	</ul>
+</div>
+
+	</article>
+	
+	
+
+	
+</main>
 
 <aside class="sidebar" itemscope="itemscope" itemtype="http://schema.org/WPSideBar">
 	
